@@ -3,6 +3,14 @@
 //Note: Escape velocity for planet earth is 11,186 metres per second
 use std::io;
 
+struct Shuttle{
+    gun_count: String,
+    bullet_count: String,
+    shuttle_weight_newts: f32,
+    total_weight_newts: f32
+}
+
+
 fn main() {
     println!("How many guns are there?");
     let mut gun_count = String::new();
@@ -21,14 +29,14 @@ fn main() {
         Err(_) => panic!("We needed a number"),
     };
     let gun_force_newts: f32 = 32955.0; //force extered by each gun in newtons
-    let gun_force_lbs: f32  = 7408.58; //force exterted by each gun in pounds
+    //let gun_force_lbs: f32  = 7408.58; //force exterted by each gun in pounds
     //let gun_force_newts: f32 = 3380000.0;
     let gun_weight: f32 = 1459.0; //weight of each gun in newts
     let gun_mass: f32 = 148.88; // mass of each gun in kilograms
     let bullet_weight: f32 = 3.83; // weight of each bullet in newts
     let bullet_mass: f32 = 0.39; // mass of each bullet in kilograms
-    let shuttle_weight_lbs: f32 = 165000.0; // weight of the shuttle in pounds
-    let shuttle_weight_newts: f32 = 733956.57; // shuttle weight in newts
+    //let shuttle_weight_lbs: f32 = 165000.0; // weight of the shuttle in pounds
+    //let shuttle_weight_newts: f32 = 733956.57; // shuttle weight in newts
     let shuttle_mass: f32 = 29930.0; //mass of shuttle in kilograms
     let thrust: f32 = gun_count * gun_force_newts;
     let mass: f32 = (gun_mass * gun_count) + (bullet_mass * bullet_count) + shuttle_mass;
